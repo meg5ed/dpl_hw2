@@ -25,4 +25,3 @@ class Player
 
 end
 
-player = Player.new()
