@@ -1,12 +1,19 @@
 class Player
-  attr_accessor :username,  :bankroll
+  attr_accessor :player
 
-  def initialize(username, bankroll)
+  def initialize
+    @player = init_person
 
-    @username = username
-    @bankroll = bankroll
   end
 
+  def init_person
+    puts "Enter your username:"
+    name = gets.strip
+    puts "Enter how much you want to add to your bankroll:"
+    bankroll = gets.strip.to_i
+
+
+  end
   def win(num)
     @bankroll += num
   end
@@ -15,4 +22,7 @@ class Player
     @bankroll -= num
   end
 
+
 end
+
+player = Player.new()
