@@ -1,4 +1,7 @@
-class Player
+require_relative 'wallet'
+
+
+class Player < Wallet
   attr_accessor :player
 
   def initialize
@@ -8,19 +11,23 @@ class Player
 
   def init_person
     puts "Enter your username:"
-    name = gets.strip
+    @name = gets.strip
     puts "Enter how much you want to add to your bankroll:"
-    bankroll = gets.strip.to_i
-
+    @amount = gets.strip.to_f
 
   end
-  def win(num)
-    @bankroll += num
-  end
 
-  def lose(num)
-    @bankroll -= num
-  end
+  # def add_to_balance(amount)
+  #   @wallet += amount
+
+  # end
+  # def win(num)
+  #   @wallet += num
+  # end
+
+  # def lose(num)
+  #   @wallet -= num
+  # end
 
 
 end
