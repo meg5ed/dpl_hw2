@@ -7,19 +7,9 @@ class Card
     @color = color
   end
 
-  def to_i
+  def hl_to_i
     case @rank
     when 'A'
-      # one = 1
-      # eleven = 11
-      # puts "would you like this card to be worth #{one} or worth #{eleve}"?
-      # case @choice
-      # when 1
-      #   puts "your total is "
-      # when 11
-      #   puts "your total is "
-      # end
-
       return 1
     when 'J'
       return 11
@@ -32,8 +22,29 @@ class Card
     end
   end
 
-    def to_s
-      return "#{@rank} #{@suit} #{@color}"
+
+  def blackjack_to_i
+    case @rank
+    when 'J'
+      return 10
+    when 'Q'
+      return 10
+    when 'K'
+      return 10
+    else
+      @rank.to_i
     end
+  end
+
+  def equalTo21
+    puts "would you like this to be 1 or 11 (y/n)"
+    one_or_eleven = gets.strip.to_s
+
+  end
+
+  def to_s
+    return "#{@rank} of #{@suit} (#{@color})"
+  end
 
 end
+
