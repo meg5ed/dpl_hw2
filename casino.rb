@@ -3,6 +3,7 @@ require_relative 'Deck'
 require_relative 'Wallet'
 require_relative 'Card'
 require_relative 'high_low'
+require_relative 'Blackjack'
 
 # Start game player has a name and an initial bankroll
 # Player can go to different games via menu
@@ -22,13 +23,13 @@ class Casino
 
 
   def initialize
-    #create person
     @player = Player.new
     show_menu
   end
 
   def show_menu
     begin
+      puts "You have $#{@player.wallet} in your account"
       puts "What game do you want to play?"
       puts "1. Slots"
       puts "2. High/Low"
@@ -47,10 +48,9 @@ class Casino
 
         when 3
           # blackjack 
-
+          Blackjack.new(@player)
         when 4
-          puts "You have $ #{@player.amount}"
-
+          puts "You have $#{player.wallet} in your account"
         when 5
           puts "Have a nice day!"
           exit
@@ -69,31 +69,3 @@ end
 
 Casino.new
 
-
-# def main_menu  
-#   puts "Main Menu: Please add money to your account! "
-#   @user = Player.new()
-#   puts "You have loaded #{@user.current_balance}"
-
-#   @option = gets.strip.to_i
-
-#   case @options
-#   when 1
-#     puts "Option 1"
-
-#   when 2
-#     puts "Option 2"
-#   when 3
-#     puts "Option 3"
-#   when 4
-#     puts "Option 4"
-#   when 5
-#     puts "Option 5"
-#   else
-#     "That is not an option, please try again"
-#     main_menu
-#   end
-
-# end
-
-# main_menu
