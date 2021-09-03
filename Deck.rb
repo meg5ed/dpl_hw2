@@ -5,7 +5,6 @@ class Deck
   attr_accessor :cards
 
 
-  #deck = Deck.new()
   def initialize
     @ranks = %w(A 2 3 4 5 6 7 8 9 10 J Q K)
     @suits = %w(Spades Diamonds Clubs Hearts)
@@ -25,8 +24,9 @@ class Deck
     @suits.each do |suit|
       @ranks.size.times do |i|
         #Ternary Operator
-        color = (suit == 'Spades' || suit == 'Clubs') ? 'Black' : 'Red'
+        color = (suit == 'Diamonds' || suit == 'Hearts') ? 'Red' : 'Black'
         @cards << Card.new(@ranks[i], suit, color)
+        #puts "#{@cards}"
       end
     end
   end
@@ -39,3 +39,4 @@ class Deck
 
 end
 
+#my_deck = Deck.new()
