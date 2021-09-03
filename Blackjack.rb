@@ -22,8 +22,6 @@ class Blackjack
         puts "That equals #{@total}" 
         puts "Its the dealers turn"
         #dealer
-        # if dealer total
-        # end
         equals21(@total, @wager)
       end
   end
@@ -85,6 +83,7 @@ end
     puts "Dealers cards are: #{first_card} and #{second_card}".red
     @total = first_card.blackjack_to_i + second_card.blackjack_to_i
     puts "That equals #{@total}".red
+    play
   end
 end
 

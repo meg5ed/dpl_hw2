@@ -31,7 +31,7 @@ class Casino
     begin
       puts "You have $#{@player.wallet} in your account"
       puts "What game do you want to play?"
-      puts "1. Slots"
+      puts "1. Rock Paper, Scissors"
       puts "2. High/Low"
       puts "3. Blackjack"
       puts "4. Check wallet"
@@ -40,8 +40,8 @@ class Casino
       raise 'Bad Input' unless response  > 0 && response < 6
       case response
         when 1
-          # todo: slots
-
+          # todo: 
+          
         when 2
           # todo: high low
           HighLow.new(@player)

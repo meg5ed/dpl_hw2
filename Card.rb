@@ -25,6 +25,8 @@ class Card
 
   def blackjack_to_i
     case @rank
+    when 'A'
+      return 10
     when 'J'
       return 10
     when 'Q'
